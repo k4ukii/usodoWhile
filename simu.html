@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>game</title>
+    <style>
+      body{
+        background-color: pink;}
+        .text{
+          font-family: Georgia;
+          font-size: 50px;
+          color: brown;
+          margin-left: 300px;
+        }
+    </style>
+  </head>
+  <body>
+    <h1 class=text>Advinhação</h1>
+    <div class=text id="numero"></div>
+    <script>
+    let numero = prompt("Jogador 1 escolha um número de 1 a 10?");
+    if(numero<1  || numero>10) {
+      document.getElementById("numero").innerHTML="Poxa..Número inválido, tente nomvamente!!"
+    }
+    else{
+      let numero1;
+      let tentativa=0;
+  do{
+     numero1 = prompt("Qual número o jogador anterior escolheu? (1 a 10 ou insira - desistir)");
+    tentativa++;
+  }
+    while (numero1!=numero  &&  numero1!="desistir");
+    if(numero1==numero) {
+     document.getElementById("numero").innerHTML="PARÁBENS VOCÊ ADVINHOU CORRETAMENTE! após "+tentativa+" tentativas"}
+      if(numero1=="desistir"){
+        document.getElementById("numero").innerHTML="Mais sorte e paciência da proxima vez"}
+        
+    }
+    
+    </script>
+  </body>
+</html>
